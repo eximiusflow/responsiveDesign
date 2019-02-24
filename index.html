@@ -23,3 +23,11 @@
 <p>In the example above, no base font has been specified, therefore the font size of the <strong>heading</strong> element will be set relative to the default font size of the browser. Assuming the default font size is 16 pixels, then the font size of the <strong>heading</strong> element will be 32 pixels.</p>
 <p>.splash-section {<br>font-size: 18px;<br>}<br>.splash-section h1 {  <br>font-size: 1.5em;<br>}</p>
 <p>The example above shows how to use ems without relying on the default font size of the browser. Instead, a base font size (<strong>18px</strong>) is defined for all text within the <strong>splash-section</strong> element. The second CSS rule will set the font size of all <strong>h1</strong> elements inside of <strong>splash-section</strong> relative to the base font of <strong>splash-section</strong> (<strong>18</strong> pixels). The resulting font size of <strong>h1</strong> elements will be <strong>27</strong> pixels.</p>
+
+<h3>Rem</h3>
+<p>The second relative unit of measurement in CSS is the <em>rem</em>, coded as <strong>rem</strong>.</p>
+<p>Rem stands for root em. It acts similar to em, but instead of checking parent elements to size font, it checks the root element. The root element is the <strong>&lt; html &gt;</strong> tag.</p>
+<p>Most browsers set the font size of <strong>&lt;html&gt;</strong> to 16 pixels, so by default rem measurements will be compared to that value. To set a different font size for the root element, you can add a CSS rule.</p>
+<p>html {   <br>font-size: 20px;<br>}<br><br>h1 {   <br>font-size: 2rem;<br>}</p>
+<p>In the example above, the font size of the root element, <strong>&lt; html &gt;</strong>, is set to 20 pixels. All subsequent rem measurements will now be compared to that value and the size of <strong>h1</strong> elements in the example will be 40 pixels.</p>
+<p>One advantage of using rems is that all elements are compared to the same font size value, making it easy to predict how large or small font will appear. If you are interested in sizing elements consistently across an entire website, the rem measurement is the best unit for the job. If you're interested in sizing elements in comparison to other elements nearby, then the em unit would be better suited for the job.</p>
