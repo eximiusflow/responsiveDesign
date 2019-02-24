@@ -76,6 +76,29 @@
 <p>In the example above, the height of all paragraphs will not shrink below 150 pixels and the height will not exceed 300 pixels.</p>
 <p>What will happen to the contents of an element if the <strong>max-height</strong> property is set too low for that element? It's possible that content will overflow outside of the element, resulting in content that is not legible.</p>
 
+<h3>Scaling Images and Videos</h3>
+<p>Many websites contain a variety of different media, like images and videos. When a website contains such media, it's important to make sure that it is scaled proportionally so that users can correctly view it.</p>
+<p>.container { <br>
+  width: 50%; <br>
+  height: 200px; <br>
+  overflow: hidden; <br>
+}</p>
+<p>.container img { <br>
+  max-width: 100%; <br>
+  height: auto; <br>
+  display: block; <br>
+}</p>
+<p>In the example above, <strong>.container</strong> represents a container div. It is set to a width of <strong>50%</strong> (half of the browser's width, in this example) and a height of 200 pixels. Setting <strong>overflow</strong> to <strong>hidden</strong> ensures that any content with dimensions larger than the container will be hidden from view.</p>
+<p>The second CSS rule ensures that images scale with the width of the container. The <strong>height</strong> property is set to <strong>auto</strong>, meaning an image's height will automatically scale proportionally with the width. Finally, the last line will display images as block level elements (rather than inline-block, their default state). This will prevent images from attempting to align with other content on the page (like text), which can add unintended margin to the images.</p>
+<p>It's worth memorizing the entire example above. It represents a <em>very common</em> design pattern used to scale images and videos proportionally.</p>
+<p><strong>Note:</strong> The example above scales the width of an image (or video) to the width of a container. If the image is larger than the container, the vertical portion of the image will overflow and will not display. To swap this behavior, you can set <strong>max-height</strong> to <strong>100%</strong> and <strong>width</strong> to <strong>auto</strong> (essentially swapping the values). This will scale the height of the image with the height of the container instead. If the image is larger than the container, the horizontal portion of the image will overflow and not display.</p>
+
+
+
+
+
+
+
 
 
 
