@@ -31,3 +31,12 @@
 <p>html {   <br>font-size: 20px;<br>}<br><br>h1 {   <br>font-size: 2rem;<br>}</p>
 <p>In the example above, the font size of the root element, <strong>&lt; html &gt;</strong>, is set to 20 pixels. All subsequent rem measurements will now be compared to that value and the size of <strong>h1</strong> elements in the example will be 40 pixels.</p>
 <p>One advantage of using rems is that all elements are compared to the same font size value, making it easy to predict how large or small font will appear. If you are interested in sizing elements consistently across an entire website, the rem measurement is the best unit for the job. If you're interested in sizing elements in comparison to other elements nearby, then the em unit would be better suited for the job.</p>
+
+<h3>Percentages: Height & Width</h3>
+<p>To size non-text HTML elements relative to their parent elements on the page you can use <em>percentages</em>.</p>
+<p>Percentages are often used to size box-model values, like width and height, padding, border, and margins. They can also be used to set positioning properties (top, bottom, left, right).</p>
+<p>To start, let's size the height and width of an element using percentages.</p>
+<p>.main {   <br>height: 300px;   <br>width: 500px;<br>}<br>.main .subsection {   <br>height: 50%;   <br>width: 50%;<br>}</p>
+<p>In the example above, <strong>.main</strong> and <strong>.subsection</strong> each represent divs. The <strong>.subsection</strong> div is nested within the <strong>.main</strong> div. Note that the dimensions of the parent div (<strong>.main</strong>) have been set to a height of 300 pixels and a width of 500 pixels.</p>
+<p>When percentages are used, elements are sized relative to the dimensions of their parent element (also known as a container). Therefore, the dimensions of the <strong>.subsection</strong> div will be 150 pixels tall and 250 pixels wide. Be careful, a child element's dimensions may be set erroneously if the dimensions of its parent element aren't set first.</p>
+<p><strong>Note:</strong> Because the box model includes padding, borders, and margins, setting an element's <strong>width</strong> to <strong>100%</strong> may cause content to overflow its parent container. While tempting, <strong>100%</strong> should only be used when content will not have padding, border, or margin.</p>
