@@ -40,3 +40,25 @@
 <p>In the example above, <strong>.main</strong> and <strong>.subsection</strong> each represent divs. The <strong>.subsection</strong> div is nested within the <strong>.main</strong> div. Note that the dimensions of the parent div (<strong>.main</strong>) have been set to a height of 300 pixels and a width of 500 pixels.</p>
 <p>When percentages are used, elements are sized relative to the dimensions of their parent element (also known as a container). Therefore, the dimensions of the <strong>.subsection</strong> div will be 150 pixels tall and 250 pixels wide. Be careful, a child element's dimensions may be set erroneously if the dimensions of its parent element aren't set first.</p>
 <p><strong>Note:</strong> Because the box model includes padding, borders, and margins, setting an element's <strong>width</strong> to <strong>100%</strong> may cause content to overflow its parent container. While tempting, <strong>100%</strong> should only be used when content will not have padding, border, or margin.</p>
+
+<h3>Percentages: Padding & Margin</h3>
+<p>Percentages can also be used to set the padding and margin of elements.</p>
+<p>When height and width are set using percentages, you learned that the dimensions of child elements are calculated based on the dimensions of the parent element.</p>
+<p>When percentages are used to set padding and margin, however, they are calculated based only on the width of the parent element.</p>
+<p>For example, when a property like <strong>margin-left</strong> is set using a percentage (say <strong>50%</strong>), the element will be moved halfway to the right in the parent container (as opposed to the child element receiving a margin half of its parent's margin).</p>
+<p>Vertical padding and margin are also calculated based on the width of the parent. Why? Consider the following scenario:</p>
+<ol>
+  <li>A container div is defined, but its height is not set (meaning it's flat).</li>
+  <li>The container then has a child element added within. The child element does have a set height. This causes the height of its parent container to stretch to that height.</li>
+  <li>The child element requires a change, and its height is modified. This causes the parent container's height to also stretch to the new height. This cycle occurs endlessly whenever the child element's height is changed!</li>
+</ol>
+<p>In the scenario above, an unset height (the parent's) results in a constantly changing height due to changes to the child element. This is why vertical padding and margin are based on the width of the parent, and not the height.</p>
+<p>Note: When using relative sizing, ems and rems should be used to size text and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be used.</p>
+
+
+
+
+
+
+
+
